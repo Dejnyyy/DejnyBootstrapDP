@@ -1,100 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SockHouse</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@500&display=swap" rel="stylesheet">
-    <link rel="icon" href="logo.png">
-    <script src="script.js"></script>
+    <title>SockHouse - Your Sock Paradise</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <style>
+        .btn-primary {
+            background-color: #0069bf;
+            border-color: #0069bf;
+        }
+
+        footer > a {
+            color: #0069bf;
+        }
+
+        .nav-link {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-link::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background-color: #0069bf;
+            transition: width 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover::before {
+            width: 100%;
+        }
+        .foot-link {
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+        .foot-link:hover {
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .foot-link::before {
+            text-decoration: none;
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background-color: #0069bf;
+            transition: width 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .foot-link:hover::before {
+            text-decoration: none;
+            width: 100%;
+        }
+
+        .navbar-brand img {
+            width: 6rem;
+            /* Set the desired width */
+            height: 2rem;
+            /* Set the desired height */
+            margin-right: 10px;
+        }
+    </style>
 </head>
+
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <nav class="navbar navbar-expand-lg nav-underline fixed-top ">
-                    <div class="container-fluid navbarstyl" >
-                        <img src="https://cdn.myshoptet.com/usr/www.dumponozek.cz/user/logos/dum_ponozek_logo-finaloriginal.png" style="height:50px;margin: 1rem;padding-left:7.5%;" alt="logo">
-                      <button class="navbar-toggler" type="button"style="color:black" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                      </button>
-                      <div class="collapse navbar-collapse" id="navbarSupportedContent" style="color:black">
-                        <ul class="navbar-nav navbradiv navbarrr me-auto mb-2 mb-lg-0"style="color:black">
-                            <a class="nav-link hoverbald"style="color:black;font-size:1rem;" href="info.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                              INFO
-                            </a>
-                             <a class="nav-link  hoverbald"style="color:black;font-size:1rem;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                              ADRESA
-                            </a>
-                            <a class="nav-link  hoverbald"style="color:black;font-size:1rem;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                              PARTNEŘI
-                            </a>
-                            <a class="nav-link  hoverbald"style="color:black;font-size:1rem;" href="contact.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                              CONTACT
-                            </a>
-                            <a class="nav-link hoverbald"style="color:black;font-size:1rem">
-                              <svg xmlns="http://www.w3.org/2000/svg" style="width:20px; height:20px; "fill="currentColor" class="bi bi-search" viewBox="0 0 16 16"> <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg>
-                            </a>
-                            </ul>
-                      </div>
-                    </div>
-                  </nav>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <a class="navbar-brand" href="#">
+            <img style="padding-left:0.5rem;"
+                src="https://cdn.myshoptet.com/usr/www.dumponozek.cz/user/logos/dum_ponozek_logo-finaloriginal.png"
+                alt="Logo">
+
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#store">Our Store</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#address">Address</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#products">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <!-- Banner Section -->
+    <section id="banner" class="jumbotron text-center">
+        <h1>Welcome to SockHouse</h1>
+        <p class="lead">Find the perfect socks to express your style.</p>
+        <a href="#products" class="btn btn-primary btn-lg">Shop Now</a>
+    </section>
+
+     <!-- Our Store Section -->
+     <section id="store" class="py-5 ">
+        <div class="container">
+            <h2 class="text-center mb-5">Our Store</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <img style="border-radius: 5px;height:20rem;"
+                    src="DP 4 V3.jpg" alt="About SockHouse" class="img-fluid">
+                </div>
+                <div class="col-md-6 py-1">
+                    <h5>Store Hours:</h5>
+                    <p>Monday - Friday: 9:00 AM - 5:00 PM<br>
+                        Saturday: 9:00 AM - 11:30 AM<br>
+                        Sunday: Closed</p>    
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div id="carouselExampleInterval" class="carousel slide container-fluid " data-bs-ride="carousel">    
-      <div class="carousel-indicators">
-          <button  type="button" data-bs-target="#carouselExampleInterval" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleInterval" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleInterval" data-bs-slide-to="2" aria-label="Slide 3"></button>
-          <button type="button" data-bs-target="#carouselExampleInterval" data-bs-slide-to="3" aria-label="Slide 4"></button>
-      </div>        
-      <div class="carousel-inner mt-5 container-fluid ratio ratio-21x9 ">
-        <div class="carousel-item active" data-bs-interval="3000">
-          <img src="4_DP 1.jpg" style="width:100%; height:auto"class="d-block w-100 mt-5 container-fluid " alt="obrazek1">
-          </div>
-        <div class="carousel-item" data-bs-interval="3000">
-          <img src="4_DP 2.jpg" style="width:100%;height:auto"class="d-block w-100 mt-5 container-fluid" alt="obrazek2">
-          
-          </div>
-        <div class="carousel-item" data-bs-interval="3000">
-          <img src="4_DP 3.jpg" style="width:100%; height:auto"class="d-block w-100 mt-5 container-fluid" alt="obrazek3">
-         
-          </div>
-        <div class="carousel-item" data-bs-interval="3000">
-          <img src="DP 4 V3.jpg"style="width:100%; height:auto" class="d-block w-100 mt-5 container-fluid" alt="obrazek4">
-          </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
-    <div class="container">
-        <div class="news text-left "id="#news">
-        <a href="#" target="_blank" style="color:rgb(0, 105, 191)">O NÁS</a>
+    <!-- About Section -->
+    <section id="about" class="py-5"  style="background-color:#dcdee2;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>About SockHouse</h2>
+                    <p>SockHouse is a specialty store dedicated to providing high-quality socks for all occasions. We
+                        believe that
+                        socks can be more than just an accessory; they can reflect your personality and add a touch of
+                        style to your
+                        everyday outfits.</p>
+                </div>
+                <div class="col-md-6">
+                    <img style="border-radius: 5px;height:20rem;;"
+                        src="4_DP 3.jpg" alt="About SockHouse" class="img-fluid">
+                </div>
+            </div>
         </div>
-        <div class="container-fluid">
-            <h1 style="color: blue;font-family: sans-serif;">Vítejte na DůmPonožek.cz </h1>
+    </section>
+
+    <!-- Address Section -->
+    <section id="address" class="py-5 ">
+        <div class="container">
+            <h2 class="text-center mb-4">Our Address</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Visit us at:</h5>
+                    <p>T. G. Masaryka 1272 (pěší zóna)<br>
+                        Kladno</p>
+                </div>
+                <div class="col-md-6 ">
+                    <h5>Map:</h5>
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2556.8284663517657!2d14.096507311929791!3d50.14564070914537!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470bb7dbb82f9439%3A0x2381d102cab1288d!2sT.%20G.%20Masaryka%2C%20272%2001%20Kladno%2C%20Czechia!5e0!3m2!1sen!2sus!4v1686859775290!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-    
-       
-    <div class="footer text-center">
-      <a href="https://www.dumponozek.cz/">© 2023 Dům Ponožek  |</a>
-      <a href="https://dejny.eth/">Design and Concept - Dejny |</a>
-     
-    </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Our Products</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card" style="border:none;box-shadow: 0px 0px 15px white;">
+                        <img src="4_DP 1.jpg" alt="Product 1" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Product 1</h5>
+                            <p class="card-text">Description of Product 1</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card" style="border:none;box-shadow: 0px 0px 15px white;">
+                        <img src="4_DP 2.jpg" alt="Product 2" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Product 2</h5>
+                            <p class="card-text">Description of Product 2</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card" style="border:none;box-shadow: 0px 0px 15px white;">
+                        <img src="4_DP 1.jpg" alt="Product 3" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Product 3</h5>
+                            <p class="card-text">Description of Product 3</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class=" py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Contact Us</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea class="form-control" id="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+                <div class="col-md-6">
+                    <p>Contact us for any inquiries or feedback. We would love to hear from you!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer bg-light text-center py-2">
+        <a class="foot-link" href="https://www.dumponozek.cz/">&copy; 2023 Dům Ponožek </a><a class="mx-1"style="color: #0069bf;">|</a>
+        <a class="foot-link" href="https://dejny.eth/">Design and Concept - Dejny </a><a class="mx-1"style="color: #0069bf;">|</a>
+        <a class="foot-link" href="terms.html">Terms and conditions</a>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </body>
+
 </html>
