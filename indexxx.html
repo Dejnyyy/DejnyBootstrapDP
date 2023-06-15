@@ -37,6 +37,34 @@
         .nav-link:hover::before {
             width: 100%;
         }
+        .foot-link {
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+        .foot-link:hover {
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .foot-link::before {
+            text-decoration: none;
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background-color: #0069bf;
+            transition: width 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .foot-link:hover::before {
+            text-decoration: none;
+            width: 100%;
+        }
 
         .navbar-brand img {
             width: 6rem;
@@ -65,6 +93,9 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
+                    <a class="nav-link" href="#store">Our Store</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="#about">About</a>
                 </li>
                 <li class="nav-item">
@@ -88,8 +119,27 @@
         <a href="#products" class="btn btn-primary btn-lg">Shop Now</a>
     </section>
 
+     <!-- Our Store Section -->
+     <section id="store" class="py-5 ">
+        <div class="container">
+            <h2 class="text-center mb-5">Our Store</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <img style="border-radius: 5px;height:20rem;"
+                    src="DP 4 V3.jpg" alt="About SockHouse" class="img-fluid">
+                </div>
+                <div class="col-md-6 py-1">
+                    <h5>Store Hours:</h5>
+                    <p>Monday - Friday: 9:00 AM - 5:00 PM<br>
+                        Saturday: 9:00 AM - 11:30 AM<br>
+                        Sunday: Closed</p>    
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- About Section -->
-    <section id="about" class="py-5">
+    <section id="about" class="py-5"  style="background-color:#dcdee2;">
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
@@ -109,7 +159,7 @@
     </section>
 
     <!-- Address Section -->
-    <section id="address" class="py-5">
+    <section id="address" class="py-5 ">
         <div class="container">
             <h2 class="text-center mb-4">Our Address</h2>
             <div class="row">
@@ -118,13 +168,10 @@
                     <p>123 Main Street<br>
                         City, State, Zip Code</p>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 ">
                     <h5>Map:</h5>
                     <div class="embed-responsive embed-responsive-16by9">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3220.0493521427977!2d-122.0839!3d37.3861!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085806689978b37%3A0x85f68bba61b95167!2sGolden%20Gate%20Bridge!5e0!3m2!1sen!2sus!4v1599209017527!5m2!1sen!2sus"
-                            frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
-                            tabindex="0"></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2556.8284663517657!2d14.096507311929791!3d50.14564070914537!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470bb7dbb82f9439%3A0x2381d102cab1288d!2sT.%20G.%20Masaryka%2C%20272%2001%20Kladno%2C%20Czechia!5e0!3m2!1sen!2sus!4v1686859775290!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
             </div>
@@ -132,7 +179,7 @@
     </section>
 
     <!-- Products Section -->
-    <section id="products" class="py-5">
+    <section id="products" class="py-5 bg-light">
         <div class="container">
             <h2 class="text-center mb-4">Our Products</h2>
             <div class="row">
@@ -168,7 +215,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="bg-light py-5">
+    <section id="contact" class=" py-5">
         <div class="container">
             <h2 class="text-center mb-4">Contact Us</h2>
             <div class="row">
@@ -197,9 +244,9 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer text-center">
-        <a href="https://www.dumponozek.cz/">&copy; 2023 Dům Ponožek |</a>
-        <a href="https://dejny.eth/">Design and Concept - Dejny |</a>
+    <footer class="footer bg-light text-center py-2">
+        <a class="foot-link" href="https://www.dumponozek.cz/">&copy; 2023 Dům Ponožek </a><a class="mx-1"style="color: #0069bf;">|</a>
+        <a class="foot-link" href="https://dejny.eth/">Design and Concept - Dejny </a>
     </footer>
 
     <!-- Bootstrap JS -->
