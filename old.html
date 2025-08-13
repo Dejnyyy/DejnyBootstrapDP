@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dům Ponožek</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <style>
+        html {
+	        scroll-behavior: smooth;
+        }
+        .btn-primary {
+            background-color: #0069bf;
+            border-color: #0069bf;
+        }
+        footer > a {
+            color: #0069bf;
+        }
+        .nav-link {
+            position: relative;
+            overflow: hidden;
+        }
+        .nav-link::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background-color: #0069bf;
+            transition: width 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover::before {
+            width: 100%;
+        }
+        .foot-link {
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+        .foot-link:hover {
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+        .foot-link::before {
+            text-decoration: none;
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background-color: #0069bf;
+            transition: width 0.3s ease;
+            transform: translateX(-50%);
+        }
+        .foot-link:hover::before {
+            text-decoration: none;
+            width: 100%;
+        }
+        .navbar-brand img {
+            width: 6rem;
+            /* Set the desired width */
+            height: 2rem;
+            /* Set the desired height */
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <a class="navbar-brand" href="#">
+            <img style="padding-left:0.5rem;"
+                src="https://cdn.myshoptet.com/usr/www.dumponozek.cz/user/logos/dum_ponozek_logo-finaloriginal.png"
+                alt="Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">O nás</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#store">Otevírací doba</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#address">Kontaktní údaje</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#products">Galerie</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Banner Section -->
+    <section id="banner" class="jumbotron">
+        <h1 class=" text-center">Důmponožek.cz</h1>
+        <p class="lead text-bold md:mx-5" style="color: black;">Jsme rádi, že jste navštívili naše stránky, rádi vás uvítáme i v naší kamenné prodejně.<br>
+            Prodeji ponožek se věnujeme od roku 2016, kdy jsme na podzim otevřeli kamennou prodejnu na pěší zóně na Kladně.<br>
+            V létě roku 2020 jsme se přestěhovali do větších prostor, nedaleko naší první prodejny.<br>
+             Poznamenáni několika lockdowny jsme začali vážně uvažovat o ponožkovém e-shopu, který zkušebně spouštíme v září 2021.<br>
+              Tento krok se ukázal ne úplně správným a tak v prosinci 2022 provoz e-shopu ukončujeme.<br>
+               Prodejna jede dál a rozšiřujeme sortiment i o dětské kloboučky, dětské spodní prádlo a čepice.
+                 V naší prodejně na Kladně si může zákazník zboží prohlédnout a "osahat".<br> Díky přímému kontaktu se zákazníkem máme i zpětnou vazbu, jaké produkty jsou žádané. Nerozhodnému zákazníkovi ochotně poradíme a doporučíme pro něj to nejlepší. 
+            </p>
+    </section>
+    <section id="about" class="py-5"  >
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Proč nakupovat u nás? </h3>
+                    <p> - velký výběr ponožek a punčochového zboží<br>
+                        - nabízíme prověřené zboží převážně českých výrobců<br>
+                        - naše práce je nám koníčkem<br>
+                        - přijatelné ceny a vysoká odbornost obsluhy<br>
+                        - poradíme a nevrhneme nejlepší řešení pro každou nožku<br>
+                        <h3>Nabízíme</h3>
+                        <span style="font-weight: bold;">Mimo ohromného množství ponožek sportovních a společenských, podkolenek všech druhů a velikostí pro ženy muže a děti</span><br>
+                        -	Zdravotní ponožky<br>
+                        -	Nadměrné velikosti (až do velikosti 51)<br>
+                        -	Dětské kloboučky a čepice<br>
+                        -	Dětské spodní prádlo<br>
+                        -	Český porcelán s motivy krtečka<br>
+                        -	Tradiční české skleněné vánoční ozdoby a dekorace<br>
+                        </p>
+                </div>
+                <div class="col-md-6">
+                    <img style="border-radius: 5px;height:20rem;;"
+                        src="4_DP 3.jpg" alt="About SockHouse" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+     <!-- Our Store Section -->
+     <section id="store" class="py-5 jumbotron">
+        <div class="container">
+            <h2 class="text-center mb-5"></h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <img style="border-radius: 5px;height:20rem;"
+                    src="DP 4 V3.jpg" alt="About SockHouse" class="img-fluid">
+                </div>
+                <div class="col-md-6 py-1">
+                    <h5>Otevírací doba:</h5>
+                    <p>pondělí - pátek: 9 - 17<br>
+                        sobota: 9 - 11:30</p>    
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Address Section -->
+    <section id="address" class="py-5 ">
+        <div class="container">
+            <h2 class="text-center mb-4">Kontaktní údaje</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Adresa prodejny:</h5>
+                    <p><br>
+                        <span style="font-weight:bold">T. G. Masaryka 1272 (pěší zóna)<br>
+                            Kladno</span>
+                    <br>
+                    tel:<span style="font-weight: bold;"> +420 607 510 720</span><br>
+                    email:<span style="font-weight: bold;"> info@dumponozek.cz</span></p>
+                </div>
+                <div class="col-md-6 ">
+                    <h5>Mapa:</h5>
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2556.8284663517657!2d14.096507311929791!3d50.14564070914537!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470bb7dbb82f9439%3A0x2381d102cab1288d!2sT.%20G.%20Masaryka%2C%20272%2001%20Kladno%2C%20Czechia!5e0!3m2!1sen!2sus!4v1686859775290!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <p>Kontaktujte nás pro jakékoli dotazy.</p>
+        </div>
+    
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-5 jumbotron">
+        <div class="container">
+            <h2 class="text-center mb-4">Fotogalerie</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card" style="border:none;box-shadow: 0px 0px 15px white;">
+                        <img src="4_DP 1.jpg" alt="Product 1" class="card-img-top">
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card" style="border:none;box-shadow: 0px 0px 15px white;">
+                        <img src="4_DP 2.jpg" alt="Product 2" class="card-img-top">
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card" style="border:none;box-shadow: 0px 0px 15px white;">
+                        <img src="4_DP 1.jpg" alt="Product 3" class="card-img-top">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer bg-light text-center py-2">
+        <a class="foot-link" href="https://www.dumponozek.cz/">&copy; 2023 Dům Ponožek </a><span class="mx-1"style="color: #0069bf;">|</span>
+        <a class="foot-link" href="https://dejny.eu/">Designed by Dejny </a>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>
