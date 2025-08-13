@@ -34,6 +34,127 @@
         scroll-margin-top: 96px;
       }
     </style>
+
+    <!-- ===== SEO & Social ===== -->
+    <link rel="canonical" href="https://www.dumponozek.cz/" />
+    <link rel="alternate" href="https://www.dumponozek.cz/" hreflang="cs-CZ" />
+    <link
+      rel="alternate"
+      href="https://www.dumponozek.cz/"
+      hreflang="x-default"
+    />
+
+    <meta
+      name="description"
+      content="Dům Ponožek – prodejna ponožek a punčochového zboží na Kladně. České značky, zdravotní ponožky, nadměrné velikosti až 51, dětské čepice a spodní prádlo. Otevřeno Po–Pá 9–17, So 9–11:30."
+    />
+    <meta name="robots" content="index,follow" />
+    <meta name="theme-color" content="#0069bf" />
+
+    <!-- Open Graph -->
+    <meta property="og:locale" content="cs_CZ" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Dům Ponožek" />
+    <meta
+      property="og:title"
+      content="Dům Ponožek – ponožky a punčochové zboží | Kladno"
+    />
+    <meta
+      property="og:description"
+      content="Kamenná prodejna s českými značkami. Zdravotní ponožky, nadměrné velikosti, dětské zboží. Otevřeno Po–Pá 9–17, So 9–11:30."
+    />
+    <meta property="og:url" content="https://www.dumponozek.cz/" />
+    <meta
+      property="og:image"
+      content="https://www.dumponozek.cz/og-image.jpg"
+    />
+    <meta
+      property="og:image:alt"
+      content="Interiér prodejny Dům Ponožek v Kladně"
+    />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Dům Ponožek – ponožky a punčochové zboží | Kladno"
+    />
+    <meta
+      name="twitter:description"
+      content="Kamenná prodejna s českými značkami. Zdravotní ponožky, nadměrné velikosti, dětské zboží."
+    />
+    <meta
+      name="twitter:image"
+      content="https://www.dumponozek.cz/og-image.jpg"
+    />
+
+    <!-- Icons -->
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <!-- Sitemap -->
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+
+    <!-- Performance hints -->
+    <link rel="preload" as="image" href="/DP 4 V3.jpg" />
+    <link rel="preconnect" href="https://www.google.com" />
+    <link rel="preconnect" href="https://maps.google.com" />
+
+    <!-- LocalBusiness structured data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ClothingStore",
+        "name": "Dům Ponožek",
+        "image": ["https://www.dumponozek.cz/og-image.jpg"],
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "T. G. Masaryka 1272",
+          "addressLocality": "Kladno",
+          "postalCode": "272 01",
+          "addressCountry": "CZ"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 50.1456407,
+          "longitude": 14.0965073
+        },
+        "url": "https://www.dumponozek.cz/",
+        "telephone": "+420607510720",
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday"
+            ],
+            "opens": "09:00",
+            "closes": "17:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Saturday",
+            "opens": "09:00",
+            "closes": "11:30"
+          }
+        ],
+        "priceRange": "$"
+      }
+    </script>
+
+    <!-- WebSite structured data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Dům Ponožek",
+        "url": "https://www.dumponozek.cz/"
+      }
+    </script>
   </head>
   <body class="font-sans text-slate-800 antialiased bg-white">
     <!-- Header -->
@@ -43,11 +164,7 @@
       <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="h-16 flex items-center justify-between">
           <a href="#top" class="flex items-center gap-3 group">
-            <img
-              class="h-8 w-auto"
-              src="https://cdn.myshoptet.com/usr/www.dumponozek.cz/user/logos/dum_ponozek_logo-finaloriginal.png"
-              alt="Dům Ponožek logo"
-            />
+            <img class="h-16 w-auto" src="/logo.png" alt="Dům Ponožek logo" />
             <span class="sr-only">Dům Ponožek</span>
           </a>
           <button
