@@ -1,224 +1,532 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dům Ponožek</title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<html lang="cs">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dům Ponožek – Kladno</title>
+
+    <!-- Fonts & Tailwind (Play CDN) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { brand: "#0069bf" },
+            fontFamily: { sans: ["Inter", "ui-sans-serif", "system-ui"] },
+            boxShadow: {
+              soft: "0 10px 30px -10px rgba(2, 6, 23, 0.2)",
+            },
+          },
+        },
+      };
+    </script>
     <style>
-        html {
-	        scroll-behavior: smooth;
-        }
-        .btn-primary {
-            background-color: #0069bf;
-            border-color: #0069bf;
-        }
-        footer > a {
-            color: #0069bf;
-        }
-        .nav-link {
-            position: relative;
-            overflow: hidden;
-        }
-        .nav-link::before {
-            content: "";
-            position: absolute;
-            left: 50%;
-            bottom: 0;
-            width: 0;
-            height: 2px;
-            background-color: #0069bf;
-            transition: width 0.3s ease;
-            transform: translateX(-50%);
-        }
-
-        .nav-link:hover::before {
-            width: 100%;
-        }
-        .foot-link {
-            text-decoration: none;
-            position: relative;
-            overflow: hidden;
-        }
-        .foot-link:hover {
-            text-decoration: none;
-            position: relative;
-            overflow: hidden;
-        }
-        .foot-link::before {
-            text-decoration: none;
-            content: "";
-            position: absolute;
-            left: 50%;
-            bottom: 0;
-            width: 0;
-            height: 2px;
-            background-color: #0069bf;
-            transition: width 0.3s ease;
-            transform: translateX(-50%);
-        }
-        .foot-link:hover::before {
-            text-decoration: none;
-            width: 100%;
-        }
-        .navbar-brand img {
-            width: 6rem;
-            /* Set the desired width */
-            height: 2rem;
-            /* Set the desired height */
-            margin-right: 10px;
-        }
+      html {
+        scroll-behavior: smooth;
+      }
+      .anchor-offset {
+        scroll-margin-top: 96px;
+      }
     </style>
-</head>
-<body>
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
-        <a class="navbar-brand" href="#">
-            <img style="padding-left:0.5rem;"
-                src="https://cdn.myshoptet.com/usr/www.dumponozek.cz/user/logos/dum_ponozek_logo-finaloriginal.png"
-                alt="Logo">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#about">O nás</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#store">Otevírací doba</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#address">Kontaktní údaje</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#products">Galerie</a>
-                </li>
-            </ul>
+  </head>
+  <body class="font-sans text-slate-800 antialiased bg-white">
+    <!-- Header -->
+    <header
+      class="sticky top-0 z-50 border-b border-slate-200/70 bg-white/80 backdrop-blur"
+    >
+      <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="h-16 flex items-center justify-between">
+          <a href="#top" class="flex items-center gap-3 group">
+            <img
+              class="h-8 w-auto"
+              src="https://cdn.myshoptet.com/usr/www.dumponozek.cz/user/logos/dum_ponozek_logo-finaloriginal.png"
+              alt="Dům Ponožek logo"
+            />
+            <span class="sr-only">Dům Ponožek</span>
+          </a>
+          <button
+            id="menu-btn"
+            class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-slate-300/70 bg-white/80 hover:bg-white shadow-sm"
+            aria-label="Otevřít menu"
+            aria-expanded="false"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <line x1="3" y1="12" x2="21" y2="12" />
+              <line x1="3" y1="18" x2="21" y2="18" />
+            </svg>
+          </button>
+          <ul class="hidden md:flex items-center gap-8 text-[15px]">
+            <li>
+              <a
+                href="#about"
+                class="relative py-2 hover:text-brand after:absolute after:left-1/2 after:-bottom-0.5 after:h-0.5 after:w-0 after:-translate-x-1/2 after:bg-brand after:transition-all hover:after:w-full"
+                >O nás</a
+              >
+            </li>
+            <li>
+              <a
+                href="#store"
+                class="relative py-2 hover:text-brand after:absolute after:left-1/2 after:-bottom-0.5 after:h-0.5 after:w-0 after:-translate-x-1/2 after:bg-brand after:transition-all hover:after:w-full"
+                >Otevírací doba</a
+              >
+            </li>
+            <li>
+              <a
+                href="#address"
+                class="relative py-2 hover:text-brand after:absolute after:left-1/2 after:-bottom-0.5 after:h-0.5 after:w-0 after:-translate-x-1/2 after:bg-brand after:transition-all hover:after:w-full"
+                >Kontaktní údaje</a
+              >
+            </li>
+            <li>
+              <a
+                href="#products"
+                class="relative py-2 hover:text-brand after:absolute after:left-1/2 after:-bottom-0.5 after:h-0.5 after:w-0 after:-translate-x-1/2 after:bg-brand after:transition-all hover:after:w-full"
+                >Galerie</a
+              >
+            </li>
+          </ul>
         </div>
-    </nav>
-    <!-- Banner Section -->
-    <section id="banner" class="jumbotron">
-        <h1 class=" text-center">Důmponožek.cz</h1>
-        <p class="lead text-bold md:mx-5" style="color: black;">Jsme rádi, že jste navštívili naše stránky, rádi vás uvítáme i v naší kamenné prodejně.<br>
-            Prodeji ponožek se věnujeme od roku 2016, kdy jsme na podzim otevřeli kamennou prodejnu na pěší zóně na Kladně.<br>
-            V létě roku 2020 jsme se přestěhovali do větších prostor, nedaleko naší první prodejny.<br>
-             Poznamenáni několika lockdowny jsme začali vážně uvažovat o ponožkovém e-shopu, který zkušebně spouštíme v září 2021.<br>
-              Tento krok se ukázal ne úplně správným a tak v prosinci 2022 provoz e-shopu ukončujeme.<br>
-               Prodejna jede dál a rozšiřujeme sortiment i o dětské kloboučky, dětské spodní prádlo a čepice.
-                 V naší prodejně na Kladně si může zákazník zboží prohlédnout a "osahat".<br> Díky přímému kontaktu se zákazníkem máme i zpětnou vazbu, jaké produkty jsou žádané. Nerozhodnému zákazníkovi ochotně poradíme a doporučíme pro něj to nejlepší. 
+        <div
+          id="mobile-menu"
+          class="md:hidden hidden border-t border-slate-200/70"
+        >
+          <ul class="px-2 py-3 space-y-1 text-[15px]">
+            <li>
+              <a
+                class="block rounded-md px-3 py-2 hover:bg-slate-100"
+                href="#about"
+                >O nás</a
+              >
+            </li>
+            <li>
+              <a
+                class="block rounded-md px-3 py-2 hover:bg-slate-100"
+                href="#store"
+                >Otevírací doba</a
+              >
+            </li>
+            <li>
+              <a
+                class="block rounded-md px-3 py-2 hover:bg-slate-100"
+                href="#address"
+                >Kontaktní údaje</a
+              >
+            </li>
+            <li>
+              <a
+                class="block rounded-md px-3 py-2 hover:bg-slate-100"
+                href="#products"
+                >Galerie</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hero -->
+    <section id="top" class="relative overflow-hidden">
+      <div
+        class="absolute inset-0 -z-10 bg-gradient-to-b from-brand/10 via-white to-white"
+      ></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="py-16 lg:py-24 grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <span
+              class="inline-flex items-center gap-2 rounded-full border border-brand/20 bg-brand/5 px-3 py-1 text-[12px] font-medium text-brand"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M20 7h-9a4 4 0 0 0-4 4v9" />
+                <path d="M9 7V5a2 2 0 0 1 2-2h9" />
+                <path d="M7 15H5a2 2 0 0 0-2 2v2" />
+              </svg>
+              Od roku 2016 na Kladně
+            </span>
+            <h1 class="mt-4 text-4xl sm:text-5xl font-extrabold text-slate-900">
+              Ponožky a punčochové zboží
+              <span class="text-brand underline">Dům Ponožek</span>
+            </h1>
+            <p class="mt-4 text-slate-600 text-lg leading-relaxed max-w-xl">
+              Kamenná prodejna s širokým výběrem českých značek. Osobní přístup,
+              odborné poradenství a poctivé ceny.
             </p>
-    </section>
-    <section id="about" class="py-5"  >
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <h3>Proč nakupovat u nás? </h3>
-                    <p> - velký výběr ponožek a punčochového zboží<br>
-                        - nabízíme prověřené zboží převážně českých výrobců<br>
-                        - naše práce je nám koníčkem<br>
-                        - přijatelné ceny a vysoká odbornost obsluhy<br>
-                        - poradíme a nevrhneme nejlepší řešení pro každou nožku<br>
-                        <h3>Nabízíme</h3>
-                        <span style="font-weight: bold;">Mimo ohromného množství ponožek sportovních a společenských, podkolenek všech druhů a velikostí pro ženy muže a děti</span><br>
-                        -	Zdravotní ponožky<br>
-                        -	Nadměrné velikosti (až do velikosti 51)<br>
-                        -	Dětské kloboučky a čepice<br>
-                        -	Dětské spodní prádlo<br>
-                        -	Český porcelán s motivy krtečka<br>
-                        -	Tradiční české skleněné vánoční ozdoby a dekorace<br>
-                        </p>
-                </div>
-                <div class="col-md-6">
-                    <img style="border-radius: 5px;height:20rem;;"
-                        src="4_DP 3.jpg" alt="About SockHouse" class="img-fluid">
-                </div>
+            <div class="mt-8 flex flex-wrap gap-3">
+              <a
+                href="tel:+420607510720"
+                class="inline-flex items-center gap-2 rounded-xl bg-brand px-5 py-3 text-white font-semibold shadow-soft hover:opacity-90"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.08 4.18 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.72c.12.9.3 1.77.54 2.61a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.47-1.47a2 2 0 0 1 2.11-.45c.84.24 1.71.42 2.61.54A2 2 0 0 1 22 16.92z"
+                  />
+                </svg>
+                Zavolat
+              </a>
+              <a
+                href="#products"
+                class="inline-flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-5 py-3 font-semibold text-slate-800 shadow-soft hover:bg-slate-50"
+                >Galerie</a
+              >
+              <a
+                href="https://maps.google.com/?q=T.+G.+Masaryka+1272,+Kladno"
+                class="inline-flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-5 py-3 font-semibold text-slate-800 shadow-soft hover:bg-slate-50"
+                target="_blank"
+                rel="noopener"
+                >Navigovat</a
+              >
             </div>
-        </div>
-    </section>
-     <!-- Our Store Section -->
-     <section id="store" class="py-5 jumbotron">
-        <div class="container">
-            <h2 class="text-center mb-5"></h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <img style="border-radius: 5px;height:20rem;"
-                    src="DP 4 V3.jpg" alt="About SockHouse" class="img-fluid">
-                </div>
-                <div class="col-md-6 py-1">
-                    <h5>Otevírací doba:</h5>
-                    <p>pondělí - pátek: 9 - 17<br>
-                        sobota: 9 - 11:30</p>    
-                </div>
+            <dl
+              class="mt-10 grid grid-cols-2 sm:grid-cols-3 gap-6 max-w-xl text-sm"
+            >
+              <div class="rounded-2xl border border-slate-200 p-4 bg-white/60">
+                <dt class="font-semibold text-slate-900">České značky</dt>
+                <dd class="mt-1 text-slate-600">Prověřená kvalita</dd>
+              </div>
+              <div class="rounded-2xl border border-slate-200 p-4 bg-white/60">
+                <dt class="font-semibold text-slate-900">Osobní přístup</dt>
+                <dd class="mt-1 text-slate-600">Rádi poradíme</dd>
+              </div>
+              <div class="rounded-2xl border border-slate-200 p-4 bg-white/60">
+                <dt class="font-semibold text-slate-900">Nadměrné velikosti</dt>
+                <dd class="mt-1 text-slate-600">Až do 51</dd>
+              </div>
+            </dl>
+          </div>
+          <div class="relative">
+            <div class="relative mx-auto w-full max-w-xl">
+              <img
+                src="DP 4 V3.jpg"
+                alt="Interiér prodejny Dům Ponožek"
+                class="w-full rounded-3xl shadow-2xl shadow-brand/10 ring-1 ring-slate-200"
+              />
+              <img
+                src="4_DP 2.jpg"
+                alt="Zboží v prodejně"
+                class="hidden sm:block absolute -bottom-10 -left-10 w-40 rounded-2xl shadow-soft ring-1 ring-slate-200"
+              />
+              <img
+                src="4_DP 3.jpg"
+                alt="Výloha prodejny"
+                class="hidden sm:block absolute -top-10 -right-10 w-48 rounded-2xl shadow-soft ring-1 ring-slate-200"
+              />
             </div>
+          </div>
         </div>
-    </section>
-    <!-- Address Section -->
-    <section id="address" class="py-5 ">
-        <div class="container">
-            <h2 class="text-center mb-4">Kontaktní údaje</h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <h5>Adresa prodejny:</h5>
-                    <p><br>
-                        <span style="font-weight:bold">T. G. Masaryka 1272 (pěší zóna)<br>
-                            Kladno</span>
-                    <br>
-                    tel:<span style="font-weight: bold;"> +420 607 510 720</span><br>
-                    email:<span style="font-weight: bold;"> info@dumponozek.cz</span></p>
-                </div>
-                <div class="col-md-6 ">
-                    <h5>Mapa:</h5>
-                    <div class="embed-responsive embed-responsive-16by9">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2556.8284663517657!2d14.096507311929791!3d50.14564070914537!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470bb7dbb82f9439%3A0x2381d102cab1288d!2sT.%20G.%20Masaryka%2C%20272%2001%20Kladno%2C%20Czechia!5e0!3m2!1sen!2sus!4v1686859775290!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="container">
-            <p>Kontaktujte nás pro jakékoli dotazy.</p>
-        </div>
-    
+      </div>
     </section>
 
-    <!-- Products Section -->
-    <section id="products" class="py-5 jumbotron">
-        <div class="container">
-            <h2 class="text-center mb-4">Fotogalerie</h2>
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="card" style="border:none;box-shadow: 0px 0px 15px white;">
-                        <img src="4_DP 1.jpg" alt="Product 1" class="card-img-top">
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card" style="border:none;box-shadow: 0px 0px 15px white;">
-                        <img src="4_DP 2.jpg" alt="Product 2" class="card-img-top">
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card" style="border:none;box-shadow: 0px 0px 15px white;">
-                        <img src="4_DP 1.jpg" alt="Product 3" class="card-img-top">
-                    </div>
-                </div>
-            </div>
+    <!-- About -->
+    <section id="about" class="anchor-offset py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12 items-start">
+          <div>
+            <h2 class="text-3xl font-bold tracking-tight text-slate-900">
+              Proč nakupovat u nás?
+            </h2>
+            <ul class="mt-6 space-y-3 text-slate-700">
+              <li class="flex gap-3">
+                <span class="mt-1 text-brand">✓</span> Velký výběr ponožek a
+                punčochového zboží
+              </li>
+              <li class="flex gap-3">
+                <span class="mt-1 text-brand">✓</span> Prověřené zboží převážně
+                českých výrobců
+              </li>
+              <li class="flex gap-3">
+                <span class="mt-1 text-brand">✓</span> Naše práce je nám
+                koníčkem
+              </li>
+              <li class="flex gap-3">
+                <span class="mt-1 text-brand">✓</span> Přijatelné ceny a vysoká
+                odbornost obsluhy
+              </li>
+              <li class="flex gap-3">
+                <span class="mt-1 text-brand">✓</span> Poradíme a navrhneme
+                nejlepší řešení pro každou nožku
+              </li>
+            </ul>
+            <h3 class="mt-10 text-xl font-semibold text-slate-900">Nabízíme</h3>
+            <p class="mt-3 text-slate-700">
+              <strong>Ohromné množství ponožek</strong> – sportovní i
+              společenské, podkolenky všech druhů a velikostí pro ženy, muže i
+              děti.
+            </p>
+            <ul class="mt-4 grid sm:grid-cols-2 gap-2 text-slate-700">
+              <li>• Zdravotní ponožky</li>
+              <li>• Nadměrné velikosti (až do 51)</li>
+              <li>• Dětské kloboučky a čepice</li>
+              <li>• Dětské spodní prádlo</li>
+              <li>• Český porcelán s motivy krtečka</li>
+              <li>• Tradiční skleněné vánoční ozdoby a dekorace</li>
+            </ul>
+          </div>
+          <div>
+            <figure class="relative">
+              <img
+                src="4_DP 1.jpg"
+                alt="Ukázka sortimentu"
+                class="w-full rounded-3xl shadow-2xl ring-1 ring-slate-200"
+              />
+            </figure>
+          </div>
         </div>
+      </div>
+    </section>
+
+    <!-- Hours / Store -->
+    <section id="store" class="anchor-offset py-20 bg-slate-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <img
+              src="DP 4 V3.jpg"
+              alt="Interiér prodejny"
+              class="w-full rounded-3xl shadow-soft ring-1 ring-slate-200"
+            />
+          </div>
+          <div>
+            <h2 class="text-3xl font-bold tracking-tight text-slate-900">
+              Otevírací doba
+            </h2>
+            <div
+              class="mt-6 w-full max-w-md rounded-2xl border border-slate-200 bg-white p-6 shadow-soft"
+            >
+              <dl class="divide-y divide-slate-200">
+                <div class="flex items-center justify-between py-3">
+                  <dt class="text-slate-700">Pondělí – Pátek</dt>
+                  <dd class="font-semibold text-slate-900">9:00 – 17:00</dd>
+                </div>
+                <div class="flex items-center justify-between py-3">
+                  <dt class="text-slate-700">Sobota</dt>
+                  <dd class="font-semibold text-slate-900">9:00 – 11:30</dd>
+                </div>
+                <div class="flex items-center justify-between py-3">
+                  <dt class="text-slate-700">Neděle</dt>
+                  <dd class="text-slate-500">Zavřeno</dd>
+                </div>
+              </dl>
+            </div>
+            <div class="mt-6 flex flex-wrap gap-3">
+              <a
+                href="tel:+420607510720"
+                class="inline-flex items-center gap-2 rounded-xl bg-brand px-5 py-3 text-white font-semibold shadow-soft hover:opacity-90"
+                >Zavolat</a
+              >
+              <a
+                href="#address"
+                class="inline-flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-5 py-3 font-semibold text-slate-800 shadow-soft hover:bg-slate-50"
+                >Kontakt</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Address / Contact -->
+    <section id="address" class="anchor-offset py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12 items-start">
+          <div>
+            <h2 class="text-3xl font-bold tracking-tight text-slate-900">
+              Kontaktní údaje
+            </h2>
+            <div class="mt-6 space-y-4 text-slate-700">
+              <p>
+                <span class="block font-semibold text-slate-900"
+                  >Adresa prodejny</span
+                >
+                <span class="block">T. G. Masaryka 1272 (pěší zóna)</span>
+                <span class="block">272 01 Kladno</span>
+              </p>
+              <p>
+                tel:
+                <a
+                  class="font-semibold text-brand hover:underline"
+                  href="tel:+420607510720"
+                  >+420 607 510 720</a
+                >
+              </p>
+              <p>
+                e‑mail:
+                <a
+                  class="font-semibold text-brand hover:underline"
+                  href="mailto:info@dumponozek.cz"
+                  >info@dumponozek.cz</a
+                >
+              </p>
+            </div>
+          </div>
+          <div>
+            <h3 class="sr-only">Mapa</h3>
+            <div
+              class="relative w-full h-72 sm:h-96 rounded-3xl overflow-hidden shadow-2xl ring-1 ring-slate-200"
+            >
+              <iframe
+                title="Mapa – Dům Ponožek"
+                class="absolute inset-0 w-full h-full"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2556.8284663517657!2d14.096507311929791!3d50.14564070914537!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470bb7dbb82f9439%3A0x2381d102cab1288d!2sT.%20G.%20Masaryka%2C%20272%2001%20Kladno%2C%20Czechia!5e0!3m2!1sen!2sus!4v1686859775290!5m2!1sen!2sus"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+
+        <p class="mt-10 text-slate-600">
+          Kontaktujte nás pro jakékoli dotazy. Rádi poradíme s výběrem.
+        </p>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="products" class="anchor-offset py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-end justify-between gap-4">
+          <h2 class="text-3xl font-bold tracking-tight text-slate-900">
+            Fotogalerie
+          </h2>
+          <a
+            href="#top"
+            class="hidden sm:inline-flex text-sm font-semibold text-brand hover:underline"
+            >Zpět nahoru</a
+          >
+        </div>
+        <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <figure
+            class="group relative overflow-hidden rounded-2xl shadow-soft ring-1 ring-slate-200"
+          >
+            <img
+              src="4_DP 1.jpg"
+              alt="Prodejna – pohled 1"
+              class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+            />
+          </figure>
+          <figure
+            class="group relative overflow-hidden rounded-2xl shadow-soft ring-1 ring-slate-200"
+          >
+            <img
+              src="4_DP 2.jpg"
+              alt="Prodejna – pohled 2"
+              class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+            />
+          </figure>
+          <figure
+            class="group relative overflow-hidden rounded-2xl shadow-soft ring-1 ring-slate-200"
+          >
+            <img
+              src="4_DP 3.jpg"
+              alt="Prodejna – pohled 3"
+              class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+            />
+          </figure>
+          <figure
+            class="group relative overflow-hidden rounded-2xl shadow-soft ring-1 ring-slate-200"
+          >
+            <img
+              src="DP 4 V3.jpg"
+              alt="Interiér – detail"
+              class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+            />
+          </figure>
+          <figure
+            class="group relative overflow-hidden rounded-2xl shadow-soft ring-1 ring-slate-200"
+          >
+            <img
+              src="4_DP 1.jpg"
+              alt="Sortiment – ponožky"
+              class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+            />
+          </figure>
+          <figure
+            class="group relative overflow-hidden rounded-2xl shadow-soft ring-1 ring-slate-200"
+          >
+            <img
+              src="4_DP 2.jpg"
+              alt="Výloha"
+              class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+            />
+          </figure>
+        </div>
+      </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer bg-light text-center py-2">
-        <a class="foot-link" href="https://www.dumponozek.cz/">&copy; 2023 Dům Ponožek </a><span class="mx-1"style="color: #0069bf;">|</span>
-        <a class="foot-link" href="https://dejny.eu/">Designed by Dejny </a>
+    <footer class="bg-slate-900">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="py-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-slate-300"
+        >
+          <p>&copy; <span id="year"></span> Dům Ponožek</p>
+          <p>
+            <a
+              class="hover:underline"
+              href="https://www.dumponozek.cz/"
+              target="_blank"
+              rel="noopener"
+              >dumponozek.cz</a
+            >
+            <span class="mx-2 text-slate-500">|</span>
+            <a
+              class="hover:underline"
+              href="https://dejny.eu/"
+              target="_blank"
+              rel="noopener"
+              >Designed by Dejny</a
+            >
+          </p>
+        </div>
+      </div>
     </footer>
 
-    <!-- Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-</body>
-
+    <!-- Scripts -->
+    <script>
+      // Mobile menu toggle
+      const btn = document.getElementById("menu-btn");
+      const menu = document.getElementById("mobile-menu");
+      btn?.addEventListener("click", () => {
+        const open = menu.classList.contains("hidden");
+        menu.classList.toggle("hidden");
+        btn.setAttribute("aria-expanded", String(open));
+      });
+      // Year in footer
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
 </html>
